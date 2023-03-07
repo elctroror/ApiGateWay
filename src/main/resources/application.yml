@@ -30,6 +30,13 @@ spring:
             - Path=/api/mails/**
           filters:
             - StripPrefix=2
+        - id: security-service
+          uri: lb://security-service
+          predicates:
+            - Path=/api/security/**
+          filters:
+            - StripPrefix=2
+
 eureka:
   client:
     serviceUrl:
